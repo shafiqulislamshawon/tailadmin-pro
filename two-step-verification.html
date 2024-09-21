@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from demo.tailadmin.com/two-step-verification by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 08:01:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      2 Step Verification | TailAdmin - Tailwind CSS Admin Dashboard Template
+    </title>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"><script nonce="b41750fc-7b80-4a7d-aaf9-19c212cebecf">try{(function(w,d){!function(ou,ov,ow,ox){if(ou.zaraz)console.error("zaraz is loaded twice");else{ou[ow]=ou[ow]||{};ou[ow].executed=[];ou.zaraz={deferred:[],listeners:[]};ou.zaraz._v="5806";ou.zaraz._n="b41750fc-7b80-4a7d-aaf9-19c212cebecf";ou.zaraz.q=[];ou.zaraz._f=function(oy){return async function(){var oz=Array.prototype.slice.call(arguments);ou.zaraz.q.push({m:oy,a:oz})}};for(const oA of["track","set","debug"])ou.zaraz[oA]=ou.zaraz._f(oA);ou.zaraz.init=()=>{var oB=ov.getElementsByTagName(ox)[0],oC=ov.createElement(ox),oD=ov.getElementsByTagName("title")[0];oD&&(ou[ow].t=ov.getElementsByTagName("title")[0].text);ou[ow].x=Math.random();ou[ow].w=ou.screen.width;ou[ow].h=ou.screen.height;ou[ow].j=ou.innerHeight;ou[ow].e=ou.innerWidth;ou[ow].l=ou.location.href;ou[ow].r=ov.referrer;ou[ow].k=ou.screen.colorDepth;ou[ow].n=ov.characterSet;ou[ow].o=(new Date).getTimezoneOffset();if(ou.dataLayer)for(const oH of Object.entries(Object.entries(dataLayer).reduce(((oI,oJ)=>({...oI[1],...oJ[1]})),{})))zaraz.set(oH[0],oH[1],{scope:"page"});ou[ow].q=[];for(;ou.zaraz.q.length;){const oK=ou.zaraz.q.shift();ou[ow].q.push(oK)}oC.defer=!0;for(const oL of[localStorage,sessionStorage])Object.keys(oL||{}).filter((oN=>oN.startsWith("_zaraz_"))).forEach((oM=>{try{ou[ow]["z_"+oM.slice(7)]=JSON.parse(oL.getItem(oM))}catch{ou[ow]["z_"+oM.slice(7)]=oL.getItem(oM)}}));oC.referrerPolicy="origin";oC.src="cdn-cgi/zaraz/sd0d9.js?z="+btoa(encodeURIComponent(JSON.stringify(ou[ow])));oB.parentNode.insertBefore(oC,oB)};["complete","interactive"].includes(ov.readyState)?zaraz.init():ou.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async di=>new Promise((dj=>{if(di){di.e&&di.e.forEach((dk=>{try{const dl=d.querySelector("script[nonce]"),dm=dl?.nonce||dl?.getAttribute("nonce"),dn=d.createElement("script");dm&&(dn.nonce=dm);dn.innerHTML=dk;dn.onload=()=>{d.head.removeChild(dn)};d.head.appendChild(dn)}catch(dp){console.error(`Error executing script: ${dk}\n`,dp)}}));Promise.allSettled((di.f||[]).map((dq=>fetch(dq[0],dq[1]))))}dj()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
+
+  <body
+    x-data="{ page: 'twoStepVerification', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
+            darkMode = JSON.parse(localStorage.getItem('darkMode'));
+            $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}"
+  >
+    <!-- ===== Preloader Start ===== -->
+    <div
+  x-show="loaded"
+  x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
+  class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black"
+>
+  <div
+    class="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent"
+  ></div>
+</div>
+
+    <!-- ===== Preloader End ===== -->
+
+    <!-- ===== 2 Step Verification Section Start ===== -->
+    <section class="overflow-hidden px-4 sm:px-8">
+      <div
+        class="flex h-screen flex-col items-center justify-center overflow-hidden"
+      >
+        <div class="no-scrollbar overflow-y-auto py-20">
+          <div class="mx-auto w-full max-w-[480px]">
+            <div class="text-center">
+              <a href="index.html" class="mx-auto mb-10 inline-flex">
+                <img
+                  src="src/images/logo/logo-dark.svg"
+                  alt="logo"
+                  class="dark:hidden"
+                />
+                <img
+                  src="src/images/logo/logo.svg"
+                  alt="logo"
+                  class="hidden dark:block"
+                />
+              </a>
+
+              <div
+                class="rounded-xl bg-white p-4 shadow-14 dark:bg-boxdark lg:p-7.5 xl:p-12.5"
+              >
+                <h1
+                  class="mb-2.5 text-3xl font-black leading-[48px] text-black dark:text-white"
+                >
+                  Verify Your Account
+                </h1>
+
+                <p class="mb-7.5 font-medium">
+                  Enter the 4 digit code sent to the registered email id.
+                </p>
+
+                <form>
+                  <div class="flex items-center gap-4.5">
+                    <input
+                      type="text"
+                      class="w-full rounded-md border-[1.5px] border-stroke bg-transparent p-3 font-medium text-2xl text-center text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    />
+
+                    <input
+                      type="text"
+                      class="w-full rounded-md border-[1.5px] border-stroke bg-transparent p-3 font-medium text-2xl text-center text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    />
+
+                    <input
+                      type="text"
+                      class="w-full rounded-md border-[1.5px] border-stroke bg-transparent p-3 font-medium text-2xl text-center text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    />
+
+                    <input
+                      type="text"
+                      class="w-full rounded-md border-[1.5px] border-stroke bg-transparent p-3 font-medium text-2xl text-center text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                    />
+                  </div>
+
+                  <p
+                    class="mb-5 mt-4 text-left font-medium text-black dark:text-white"
+                  >
+                    Did not receive a code?
+                    <button class="text-primary">Resend</button>
+                  </p>
+
+                  <button
+                    class="flex w-full justify-center rounded-md bg-primary p-[13px] font-bold text-gray hover:bg-opacity-90"
+                  >
+                    Verify
+                  </button>
+
+                  <span class="mt-5 block text-red">
+                    Don’t share the verification code with anyone!
+                  </span>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== 2 Step Verification Section End ===== -->
+  <script defer src="bundle.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8c4fcc72bed3dae7","version":"2024.8.0","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true}},"token":"67f7a278e3374824ae6dd92295d38f77","b":1}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from demo.tailadmin.com/two-step-verification by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 18 Sep 2024 08:01:17 GMT -->
+</html>
